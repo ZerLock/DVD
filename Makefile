@@ -15,12 +15,14 @@ LDFLAGS	=	-L/usr/local/lib -lcsfml-window -lcsfml-graphics
 
 CPFLAGS	=	-W -Werror
 
+CFLAGS	=	-I./include
+
 NAME	=	dvd
 
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	$(CC) -o $(NAME) $(LDFLAGS)
+	$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
 
 clean:
 	rm -f $(OBJ)
