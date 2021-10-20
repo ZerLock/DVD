@@ -14,7 +14,12 @@ int main(void)
     sfRenderWindow *window;
     char *title = "DVD";
     sfEvent event;
+    sfTexture *dvd;
+    sfSprite *dvd_s;
+    sfVector2f dvd_pos = {0, 0};
 
+    dvd = sfTexture_createFromFile("obj/dvd.png", NULL);
+    dvd_s = sfSprite_create();
     window = sfRenderWindow_create(mode, title, sfClose, NULL);
     if (!window)
         return (84);
@@ -22,10 +27,14 @@ int main(void)
         while (sfRenderWindow_pollEvent(window, &event)) {
             if (event.type == sfEvtClosed)
                 sfRenderWindow_close(window);
-            sfRenderWindow_clear(window, sfBlack);
-            sfRenderWindow_display(window);
         }
+        sfRenderWindow_clear(window, sfWhite);
+        sfSprite_setPosition(dvd_s, dvd_pos);
+        sfRenderWindow_drawSprite(window, dvd_s, NULL);
+        sfRenderWindow_display(window);
     }
+    sfTexture_destroy(dvd);
+    sfSprite_destroy(dvd_s);
     sfRenderWindow_destroy(window);
     return (0);
 }
