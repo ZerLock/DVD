@@ -10,4 +10,4 @@
     #define WIDTH   1080
     #define HEIGHT  720
 
-#endif /* CONSTANTS_H_
+#endif /* CONSTANTS_H_ */
