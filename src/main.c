@@ -16,10 +16,11 @@ int main(void)
     sfEvent event;
     sfTexture *dvd;
     sfSprite *dvd_s;
-    sfVector2f dvd_pos = {0, 0};
+    sfVector2f dvd_pos = {WIDTH / 2 - WIDTH_DVD / 2, HEIGHT / 2 - HEIGHT_DVD / 2};
 
     dvd = sfTexture_createFromFile("obj/dvd.png", NULL);
     dvd_s = sfSprite_create();
+    sfSprite_setTexture(dvd_s, dvd, sfFalse);
     window = sfRenderWindow_create(mode, title, sfClose, NULL);
     if (!window)
         return (84);
