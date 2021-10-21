@@ -25,21 +25,13 @@ int main(void)
     sfEvent event;
     sfTexture *dvd;
     sfSprite *dvd_s;
-<<<<<<< HEAD
-    sfVector2f dvd_pos = {WIDTH / 2 - WIDTH_DVD / 2, HEIGHT / 2 - HEIGHT_DVD / 2};
-=======
     sfVector2f dvd_pos = {0, 0};
     int dvd_po_in[] = {0, 0};
     int val2add[] = {1, 1};
->>>>>>> banane
 
     dvd = sfTexture_createFromFile("obj/dvd_texture.png", NULL);
     dvd_s = sfSprite_create();
-<<<<<<< HEAD
-    sfSprite_setTexture(dvd_s, dvd, sfFalse);
-=======
     sfSprite_setTexture(dvd_s, dvd, sfTrue);
->>>>>>> banane
     window = sfRenderWindow_create(mode, title, sfClose, NULL);
     if (!window)
         return (84);
