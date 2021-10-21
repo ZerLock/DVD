@@ -1,13 +1,15 @@
 /*
-** EPITECH PROJECT, 2021
-** main.c
+** PERSONNAL PROJECT, 2021
+** main.c - DVD
+** Contributors:
+** @DUBOSCLARD LÉO && @Just1Truc
 ** File description:
-** main
+** main file with main function
 */
 
 #include <SFML/Graphics.h>
 #include "constants.h"
-#include "proto.h"
+#include "movements.h"
 
 sfVector2f get_position(sfVector2f *point_to)
 {

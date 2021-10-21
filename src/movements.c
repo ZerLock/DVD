@@ -1,9 +1,13 @@
 /*
-** EPITECH PROJECT, 2021
-** DVD
+** PERSONNAL PROJECT, 2021
+** movements.c - DVD
+** Contributors:
+** @DUBOSCLARD LÉO && @Just1Truc
 ** File description:
 ** Functions that move the sprite of the dvd.
 */
+
+#include "movements.h"
 
 int x_calculate(int x, int width, int val2add)
 {

@@ -25,7 +25,7 @@ $(NAME):	$(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
 
 clean:
-	rm -f $(OBJ)
+	rm -f src/$(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
