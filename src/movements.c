@@ -7,22 +7,23 @@
 ** Functions that move the sprite of the dvd.
 */
 
+#include "constants.h"
 #include "movements.h"
 
-int x_calculate(int x, int width, int val2add)
+int x_calculate(int x, int val2add)
 {
-    if (x >= width - 270)
+    if (x >= WIDTH - WIDTH_DVD)
         return (-1);
-    if (x <= -30)
+    if (x <= 0)
         return (1);
     return (val2add);
 }
 
-int y_calculate(int y, int height, int val2add)
+int y_calculate(int y, int val2add)
 {
-    if (y >= height - 200)
+    if (y >= HEIGHT - HEIGHT_DVD)
         return (-1);
-    if (y <= -50)
+    if (y <= 0)
         return (1);
     return (val2add);
 }

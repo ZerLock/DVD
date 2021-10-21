@@ -23,28 +23,41 @@ int main(void)
 {
     sfVideoMode mode = {WIDTH, HEIGHT, 32};
     sfRenderWindow *window;
-    const char *title = "DVD";
     sfEvent event;
     sfTexture *dvd;
     sfSprite *dvd_s;
     sfVector2f dvd_pos = {0, 0};
     int dvd_po_in[] = {0, 0};
     int val2add[] = {1, 1};
+    sfColor black = sfBlack;
+    sfColor red = sfRed;
+    sfColor blue = sfBlue;
+    sfColor green = sfGreen;
+    sfColor current = sfBlack;
 
     dvd = sfTexture_createFromFile("obj/dvd_texture.png", NULL);
     dvd_s = sfSprite_create();
     sfSprite_setTexture(dvd_s, dvd, sfTrue);
-    window = sfRenderWindow_create(mode, title, sfClose, NULL);
+    window = sfRenderWindow_create(mode, "DVD", sfClose, NULL);
     if (!window)
         return (84);
+    sfWindow_setFramerateLimit((sfWindow *) window, 60);
     while (sfRenderWindow_isOpen(window)) {
         while (sfRenderWindow_pollEvent(window, &event)) {
             if (event.type == sfEvtClosed)
                 sfRenderWindow_close(window);
         }
-        sfRenderWindow_clear(window, sfBlack);
-        val2add[0] = x_calculate(dvd_po_in[0], WIDTH, val2add[0]);
-        val2add[1] = y_calculate(dvd_po_in[1], HEIGHT, val2add[1]);
+        if (dvd_pos.x == 0)
+            current = blue;
+        if (dvd_pos.y == 0)
+            current = green;
+        if (dvd_pos.x == WIDTH - WIDTH_DVD)
+            current = black;
+        if (dvd_pos.y == HEIGHT - HEIGHT_DVD)
+            current = red;
+        sfRenderWindow_clear(window, current);
+        val2add[0] = x_calculate(dvd_po_in[0], val2add[0]);
+        val2add[1] = y_calculate(dvd_po_in[1], val2add[1]);
         dvd_pos.x += val2add[0];
         dvd_pos.y += val2add[1];
         dvd_po_in[0] += val2add[0];
