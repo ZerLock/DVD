@@ -10,4 +10,4 @@ This project was completed in 2 days and complies with the ***Coding Style*** ru
 ![](./presentations_images/window_pres.png)
 
 ## Installation
-To test this project, you can just clone or download this repository and use the make command to run our Makefile then run this command: ``*./dvd*``. Of course, make sure you have installed the CSFML library on your PC.
+To test this project, you can just clone or download this repository and use the *``make``* command to run our Makefile then run this command: *``./dvd``*. Of course, make sure you have installed the CSFML library on your PC.
