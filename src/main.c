@@ -23,9 +23,8 @@ void get_event(sfRenderWindow *window, sfEvent event)
         sfRenderWindow_close(window);
 }
 
-void game_loop(sfRenderWindow *window)
+void game_loop(sfRenderWindow *window, sfEvent event)
 {
-    sfEvent event;
     sfColor current = sfBlack;
     sfTexture *dvd = sfTexture_createFromFile("obj/dvd_texture.png", NULL);
     sfSprite *dvd_s = sfSprite_create();
@@ -52,12 +51,13 @@ int main(void)
 {
     sfVideoMode mode = {WIDTH, HEIGHT, 32};
     sfRenderWindow *window;
+    sfEvent event;
     
     window = sfRenderWindow_create(mode, "DVD", sfClose, NULL);
     if (!window)
         return (84);
     sfWindow_setFramerateLimit((sfWindow *) window, 60);
-    game_loop(window);
+    game_loop(window, event);
     sfRenderWindow_destroy(window);
     return (0);
 }
