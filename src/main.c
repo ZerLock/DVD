@@ -39,12 +39,7 @@ void game_loop(sfRenderWindow *window)
             get_event(window, event);
         current = change_bg_color(dvd_pos, current);
         sfRenderWindow_clear(window, current);
-        val2add[0] = x_calculate(dvd_po_in[0], val2add[0]);
-        val2add[1] = y_calculate(dvd_po_in[1], val2add[1]);
-        dvd_pos.x += val2add[0];
-        dvd_pos.y += val2add[1];
-        dvd_po_in[0] += val2add[0];
-        dvd_po_in[1] += val2add[1];
+        move_dvd(&dvd_pos, dvd_po_in, val2add);
         sfSprite_setPosition(dvd_s, dvd_pos);
         sfRenderWindow_drawSprite(window, dvd_s, NULL);
         sfRenderWindow_display(window);
